@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import ProductCard from "../Components/ProductCard";
 
 function Product() {
   const url =
@@ -26,16 +27,10 @@ function Product() {
 
   if (product) {
     content = product.results.map((movie, index) => (
-      <div key={index}>
-        <h1 className="text-2xl font-bold mb-3">{movie.title}</h1>
-        <div>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-            alt={movie.title}
-          />
-        </div>
-        <div></div>
-        <div></div>
+      <div key={index} className="">
+        <ProductCard 
+          movie={movie}/>
+        
       </div>
     ));
   }
