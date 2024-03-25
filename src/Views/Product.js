@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import MovieInfo from "../Components/MovieInfo";
+import Spinner from "../Components/Spinner";
 import { useAxiosGet } from "../Hooks/HttpRequest";
 
 function Product() {
@@ -9,7 +10,7 @@ function Product() {
   const { loading, data: product } = useAxiosGet(url);
 
 if(loading){
-  return <div>Loading...</div>
+  return <Spinner />;
 }
 
   return (

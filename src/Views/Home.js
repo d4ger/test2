@@ -1,5 +1,6 @@
 import React from "react";
 import ProductCard from "../Components/ProductCard";
+import Spinner from "../Components/Spinner.js";
 import { useAxiosGet } from "../Hooks/HttpRequest";
 
 function Home() {
@@ -8,7 +9,7 @@ function Home() {
   const { loading, data: product } = useAxiosGet(url);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Spinner />;
   }
 
   return (
