@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import ProductCard from "../Components/ProductCard";
+import MovieInfo from "../Components/MovieInfo";
 
 function Product() {
   const { id } = useParams();
@@ -27,7 +27,7 @@ function Product() {
     <div>
       {product && (
         <div className="">
-          <ProductCard movie={product} />
+          <MovieInfo movie={product} />
         </div>
       )}
     </div>

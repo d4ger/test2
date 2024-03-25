@@ -5,7 +5,7 @@ function NavigationMe(props) {
   return (
     <>
       <div
-        className="fixed bg-white top-0 left-0 w-4/5 h-full z-50 shadow">
+        className="fixed bg-white top-0 left-0 w-2/3 xs:2/3 sm:w-2/4 md:w-1/4 lg:w-1/4 h-full z-50 shadow">
           The menu
           <ul>
             <li>
