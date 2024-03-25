@@ -7,35 +7,29 @@ function Home() {
     "https://api.themoviedb.org/3/movie/popular?api_key=3dfa95edb071446bb776f76ab1aa7610&language=es-MX";
   const [product, setProduct] = useState(null);
 
-  let content = null;
-
-  const fetchData = () => {
-    axios
-      .get(url)
-      .then((response) => {
-        setProduct(response.data);
-        console.log(response.data.results);
-      })
-      .catch((error) => {
-        console.log("Error fetching product:", error);
-      });
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(url);
+        setProduct(response.data);
+      } catch (error) {
+        console.log("Error fetching product:", error);
+      }
+    };
+
     fetchData();
   }, [url]);
 
-  if (product) {
-    content = product.results.map((movie, index) => (
-      <div key={index} className="">
-        <ProductCard 
-          movie={movie}/>
-        
-      </div>
-    ));
-  }
-
-  return <div>{content}</div>;
+  return (
+    <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 m-10">
+      {product &&
+        product.results.map((movie, index) => (
+          <div key={index} className="flex">
+            <ProductCard movie={movie} />
+          </div>
+        ))}
+    </div>
+  );
 }
 
 export default Home;
