@@ -10,10 +10,10 @@ function MovieInfo({ movie }) {
         className="mb-4 rounded-lg overflow-hidden"/>
         </Link>
       <h1 className="text-center text-lg font-bold">{movie.title}</h1>
-      <p className="pb-3 text-gray-600">{movie.overview}</p>
+      <p className="pb-3 text-gray-600 mb-10 w-1/2">{movie.overview}</p>
       <Link
         to={`/`}
-        className="bg-blue-500 text-white p-2 justify-center w-full rounded-md block text-center mt-auto">
+        className="bg-blue-500 text-white p-3 justify-center w-1/4 rounded-md block text-center mt-auto m-4">
             
             Return
       </Link>
