@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
 import NavigationMe from "./NavigationMe";
 
 function Navigation() {
-  const [showMenu, setShowMenu] = useState({
-    loading: false,
-  });
+  const [showMenu, setShowMenu] = useState(null);
 
   return (
     <nav>
