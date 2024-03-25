@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 import NavigationMe from "./NavigationMe";
 
 function Navigation() {
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState({
+    loading: false,
+  });
 
   return (
     <nav>
@@ -28,12 +30,12 @@ function Navigation() {
           <span className="font-bold">The menu</span>
           <ul>
             <li>
-              <Link to="/" className="text-blue-500">
+              <Link to="/" className="text-blue-500 block py-2 px-4 mt-4 rounded transition duration-300 ease-in-out hover:bg-blue-100">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/about" className="text-blue-500">
+              <Link to="/about" className="text-blue-500 block py-2 px-4 mt-4 rounded transition duration-300 ease-in-out hover:bg-blue-100">
                 About
               </Link>
             </li>
