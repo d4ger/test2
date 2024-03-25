@@ -10,7 +10,7 @@ function MovieInfo({ movie }) {
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
-              className="mb-4 rounded-lg overflow-hidden"
+              className="mb-4 rounded-lg overflow-hidden h-96"
             />
           </Link>
           <h1 className="text-center text-lg font-bold">{movie.title}</h1>
